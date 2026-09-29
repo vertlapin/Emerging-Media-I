@@ -17,3 +17,7 @@ img {
   width:500px;
   align: center;
 }
+.hero {
+  display: block;
+  margin: 0 auto;
+}
