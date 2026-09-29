@@ -21,3 +21,6 @@ img {
   display: block;
   margin: 0 auto;
 }
+.links a{
+  margin-right: 10px;
+}
