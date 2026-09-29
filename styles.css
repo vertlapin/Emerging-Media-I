@@ -1,0 +1,11 @@
+body {
+  background-color: powderblue;
+  text-align: center;
+}
+h1 {
+  color: blue;
+  margin-top: 50px;
+}
+p {
+  color: red;
+}
