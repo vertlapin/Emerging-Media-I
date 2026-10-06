@@ -21,3 +21,6 @@ img {
   display: flex;
   justify-content: space-between;
 }
+#links {
+  justify-content: space-between;
+}
