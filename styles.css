@@ -18,7 +18,7 @@ img {
   align: center;
 }
 .hero {
-  display: block;
+  display: flexbox;
   margin: 0 auto;
 }
 .links a{
