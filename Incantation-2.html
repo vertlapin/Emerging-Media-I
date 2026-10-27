@@ -47,5 +47,63 @@ View or download the poster
 
 <a href="Incantations.html">Back to Incantations</a>
 
+<!-- Retro Chatroom Music Player -->
+
+<style>
+  .music-player {
+    text-align: center;
+    margin: 25px auto;
+  }
+
+  .music-button {
+    background-color: #fce4ef;
+    color: #a53d78;
+    border: 2px solid #d78bb2;
+    padding: 12px 24px;
+    font-family: "Courier New", monospace;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 3px 3px 0px #d78bb2;
+  }
+
+  .music-button:hover {
+    background-color: #f7c8df;
+  }
+</style>
+
+<div class="music-player">
+
+  <audio id="chatroomMusic" loop>
+    <source src="chatroom-music.mp3" type="audio/mpeg">
+  </audio>
+
+  <button class="music-button"
+          id="musicButton"
+          onclick="toggleMusic()">
+    ♡ PLAY MUSIC ♡
+  </button>
+
+</div>
+
+<script>
+  const music = document.getElementById("chatroomMusic");
+  const button = document.getElementById("musicButton");
+
+  music.volume = 0.5;
+
+  function toggleMusic() {
+    if (music.paused) {
+      music.play().then(() => {
+        button.textContent = "♡ PAUSE MUSIC ♡";
+      }).catch(() => {
+        button.textContent = "♡ PLAY MUSIC ♡";
+      });
+    } else {
+      music.pause();
+      button.textContent = "♡ PLAY MUSIC ♡";
+    }
+  }
+</script>
+
 </body>
 </html>
