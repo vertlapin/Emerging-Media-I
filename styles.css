@@ -30,87 +30,108 @@ img {
 
 .images {
     display: grid;
-    grid-template-columns: repeat(8, minmax(0, 1fr));
-    grid-template-rows: repeat(3, auto);
-    gap: 12px;
-    width: 100%;
-    max-width: 1000px;
-    margin: 30px auto;
-    padding: 10px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-rows: repeat(3, 20vw);
+    gap: 0;
+    width: 100vw;
+    max-width: none;
+    margin: 30px 0;
+    margin-left: calc(50% - 50vw);
+    padding: 0;
     box-sizing: border-box;
-    align-items: center;
 }
 
 .images img {
     display: block;
     width: 100%;
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    max-width: none;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+    border: none;
 }
 
-.main-photo {
-    grid-column: 3 / 7;
+/* Main photograph — top center */
+
+.images .main-photo {
+    grid-column: 2 / 5;
     grid-row: 1 / 3;
 }
 
-.photo-2 {
-    grid-column: 1 / 3;
+/* Left side */
+
+.images .photo-2 {
+    grid-column: 1;
     grid-row: 1;
 }
 
-.photo-3 {
-    grid-column: 1 / 3;
+.images .photo-3 {
+    grid-column: 1;
     grid-row: 2;
 }
 
-.photo-4 {
-    grid-column: 1 / 3;
+.images .photo-4 {
+    grid-column: 1;
     grid-row: 3;
 }
 
-.photo-5 {
-    grid-column: 7 / 9;
+/* Right side */
+
+.images .photo-5 {
+    grid-column: 5;
     grid-row: 1;
 }
 
-.photo-6 {
-    grid-column: 7 / 9;
+.images .photo-6 {
+    grid-column: 5;
     grid-row: 2;
 }
 
-.photo-7 {
-    grid-column: 7 / 9;
+.images .photo-7 {
+    grid-column: 5;
     grid-row: 3;
 }
 
-.photo-8 {
-    grid-column: 3 / 5;
+/* Photographs underneath */
+
+.images .photo-8 {
+    grid-column: 2;
     grid-row: 3;
 }
 
-.photo-9 {
-    grid-column: 5 / 6;
+.images .photo-9 {
+    grid-column: 3;
     grid-row: 3;
 }
 
-.photo-10 {
-    grid-column: 6 / 7;
+.images .photo-10 {
+    grid-column: 4;
     grid-row: 3;
 }
+
+/* Mobile layout */
 
 @media (max-width: 600px) {
     .images {
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 8px;
+        grid-template-rows: none;
+        grid-auto-rows: 33.33vw;
     }
 
-    .images img {
+    .images img:not(.main-photo) {
         grid-column: auto;
         grid-row: auto;
     }
 
     .images .main-photo {
         grid-column: 1 / -1;
+        grid-row: 1 / 3;
     }
+}
+
+html, body {
+    overflow-x: hidden;
 }
